@@ -81,7 +81,7 @@ func main() {
 								return
 				}
 
-				fmt.Printf("Number of applications: %v\n", len(appsMap))
+				//DEBUG: fmt.Printf("Number of applications: %v\n", len(appsMap))
 
 				/* Debug print the apps
 				for _, app := range appsMap {
