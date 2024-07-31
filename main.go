@@ -1,12 +1,13 @@
 package main
 
 import (
-				"bufio"
-				"fmt" //DEBUG
-				"log"
-				"os"
-				//"os/exec"
-				"strings"
+	"bufio"
+	"fmt"
+	//"fmt" //DEBUG
+	"log"
+	"os"
+	"os/exec"
+	"strings"
 )
 
 //TIP:
@@ -20,7 +21,6 @@ func main(){
 				if len(os.Args) > 1 {
 								run()
 				}
-				run()
 }
 
 func rnn() {
@@ -59,7 +59,7 @@ func rnn() {
 				for i:= range appScanner{
 								appScanner[i].Split(bufio.ScanWords)
 								for appScanner[i].Scan(){
-												//fmt.Printf("%#v\n", appScanner[i].Text())
+												//fmt.Printf("%v\n", appScanner[i].Text()) //DEBUG
 												fieldData[i] = append(fieldData[i], appScanner[i].Text())
 								}
 				}
@@ -78,7 +78,7 @@ func rnn() {
 																fieldData[i][j] = strings.ReplaceAll(fieldData[i][j], "alias:", "")
 												}
 												fieldData[i][j] = strings.Trim(fieldData[i][j], `\"`)
-												//fmt.Printf("%#v\n", fieldData[i][j]) //DEBUG
+												//fmt.Printf("%v\n", fieldData[i][j]) //DEBUG
 
 								}
 				}
@@ -90,10 +90,9 @@ func rnn() {
 				for _, arg := range os.Args[1:] {
 								for n := range len(fieldData) {
 												if arg == fieldData[n][2] || arg == fieldData[n][0]{
-																//cmd := exec.Command(fieldData[n][1])
-
-																//err := cmd.Start()
-																fmt.Printf("Going to run: %v\n", fieldData[n][1]) //DEBUG
+																cmd := exec.Command(fieldData[n][1])
+																err := cmd.Start()
+																//fmt.Printf("Going to run: %v\n", fieldData[n][1]) //DEBUG
 
 																if err != nil {
 																				log.Printf("Couldn't start: %v at path: %v\n", fieldData[n][0], fieldData[n][1])
@@ -147,13 +146,13 @@ func run() {
 																field = strings.ReplaceAll(field, "name:", "")
 												} else if strings.Contains(field, "path:") {
 																field = strings.ReplaceAll(field, "path:", "")
-																field = strings.ReplaceAll(field, "\\", "//")
+																field = strings.ReplaceAll(field, "\\", "/")
 												} else if strings.Contains(field, "alias:") {
 																field = strings.ReplaceAll(field, "alias:", "")
 												}
 												field = strings.Trim(field, `\"`)
 												fields[j] = field
-												//DEBUG: fmt.Println(field)
+												//fmt.Println(field) //DEBUG
 								}
 								fieldData[i] = fields
 				}
@@ -163,13 +162,13 @@ func run() {
 				for _, arg := range os.Args[1:] {
 								for n := range fieldData {
 												if arg == fieldData[n][2] || arg == fieldData[n][0] {
-																// cmd := exec.Command(fieldData[n][1])
-
-																// err := cmd.Start()
-																fmt.Printf("Going to run: %v\n", fieldData[n][1]) // DEBUG
+																cmd := exec.Command(fieldData[n][1])
+																err := cmd.Start()
+																//fmt.Printf("Going to run: %v\n", fieldData[n][1]) // DEBUG
 
 																if err != nil {
 																				log.Printf("Couldn't start: %v at path: %v\n", fieldData[n][0], fieldData[n][1])
+																				//log.Printf("ERR: %v", err) //DEBUG
 																				panicStatus = true
 																}
 												}
