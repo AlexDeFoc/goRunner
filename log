@@ -1,1 +1,2 @@
-- commented out testing : nr of aplications available
+- put by default config to contain "bank-demo" for beginners
+- added releases and MY bank file to .gitignore
