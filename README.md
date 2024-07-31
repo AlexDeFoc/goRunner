@@ -23,13 +23,13 @@ Map: for loop approach
 * slice:
   * NVIM: 1,097 ms or 3.97% faster
   * SHELL.go: 2,741 ms or 7.14% faster
-  * SHELL.go: 0,126 ms or 0.371% faster
+  * SHELL.exe: 0,126 ms or 0.371% faster
 
 
 * map is faster by 23.8%
   * NVIM: 1,097 ms or 4.13% slower
   * SHELL.go: 2,741 ms or 7.7% slower
-  * SHELL.go: 0,126 ms or 0.373% slower
+  * SHELL.exe: 0,126 ms or 0.373% slower
 
 
 [^1]: Means i tested while in neovim with the following command: !go run main.go ap21 ap79 app100
