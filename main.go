@@ -7,7 +7,7 @@ import (
 				"os"
 				"os/exec"
 				"strings"
-				"time"
+				//DEBUG: "time"
 )
 
 // AppInfo holds information about an application
@@ -34,7 +34,7 @@ func SplitAt(delim string) bufio.SplitFunc {
 }
 
 func main() {
-				t2 := time.Now()
+				//DEBUG ONLY: t2 := time.Now()
 
 				// Get the name of program file from config
 				configFile, err := os.ReadFile("config")
@@ -108,5 +108,5 @@ func main() {
 								fmt.Println("Apps not found:", appsNotFound)
 				}
 
-				fmt.Printf("For loop took: %v nanoseconds\n", time.Since(t2).Nanoseconds())
+				//DEBUG ONLY: fmt.Printf("For loop took: %v nanoseconds\n", time.Since(t2).Nanoseconds())
 }
