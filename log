@@ -1,0 +1,3 @@
+- fixed issue #1 : where paths/names/aliases with names weren't allowed
+-	reworked the whole thing
+- optimised it to work at speed between 9.6 to 21 miliseconds!
