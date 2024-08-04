@@ -32,7 +32,11 @@ The program is separated in three parts:
   * Path
   * Alias
   * NOTE: A programs list called bank-demo is provided for a easier time customising + a config file containing the name "bank-demo"
+ 
+# Structure of programs file list:
+![image](https://github.com/user-attachments/assets/39954499-db1f-4be7-8ce5-5679660aef34)
 
+ 
 # Customisation:
 - This app allows you to set any name and alias for your app in the programs file so you can run apps easier & faster
 
