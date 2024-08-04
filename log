@@ -1,2 +1,2 @@
-- put by default config to contain "bank-demo" for beginners
-- added releases and MY bank file to .gitignore
+- made crossplatform distributions
+- cleaned a bit main.go
