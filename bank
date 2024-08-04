@@ -8,3 +8,4 @@ name:"KingdomTwoCrowns", path:"C:\Game\Internet\Kingdom Two Crowns\KingdomTwoCro
 name:"Prism", path:"C:\Game\Prism\prismlauncher.exe", alias:"minecraft"
 name:"KeePassXC", path:"C:\App\KeepassXC\KeePassXC.exe", alias:"keepass"
 name:"App0", path:"path\to\app0", alias:"none"
+
