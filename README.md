@@ -1,107 +1,56 @@
-# Benchmarking: 
-why i choose to use maps instead of slices
+# Short about this app:
+* App made fully in go and distributed as executable for any platform. (batch is code is only for ME to build and compress the app for releasing)
+* It's a very easy to use, flexible config customisation and protability app.
+* It provides you the power to run any app on your computer in the console, allows you to set aliases for shorter names, and you can manually set alias in your shell for a command like "run" to run the main executable from a certain directory.
 
-Slice: for loop approach
-: It's slower for a small batch of data and a bit quicker on large data.
-&emsp;
+# Platforms supported:
+- Windows
+- Linux
+- MacOS (called darwin)
 
-Map: for loop approach
-: It's slower for a small batch of data and a bit quicker on large data.
----
+# Architectures supported:
+- AMD64 : for a cpu of 64 bit
+- 386 : for a cpu of 32/86 bit
+- ARM : for cpu of type arm
+- ARM64 : for cpu of type arm64
 
-# Parameters of the tests:
-1. NVIM [^1]
-2. SHELL.go [^2]
-3. SHELL.exe [^3]
+# How to download released archive:
+1. Go to releases
+2. Choose your version
+3. Download the archive with the platform-architecture name from the chapters above
+4. De-archive/Extract the contents in a folder where you want your "goRunner" app to be
 
-# Speed notices:[^5]
-### Small data (10 elements): 
-* slice is slower by 6,5576 miliseconds or 31.23%
-* map is faster by 23.8%
+# How to use the app:
+The program is separated in three parts:
+1. Main executable:
+* Run it with arguments (name OR alias of any app set in your programs list)
+2. Config file:
+* Here you write the name of the programs file list (i set it to bank)
+3. Programs file:
+* Here you can add as many apps you want. An app is composed of :
+  * Name
+  * Path
+  * Alias
+  * NOTE: A programs list called bank-demo is provided for a easier time customising + a config file containing the name "bank-demo"
 
-### Big data (100 elements):
-* slice:
-  * NVIM: 1,097 ms or 3.97% faster
-  * SHELL.go: 2,741 ms or 7.14% faster
-  * SHELL.exe: 0,126 ms or 0.371% faster
+# Customisation:
+- This app allows you to set any name and alias for your app in the programs file so you can run apps easier & faster
 
+# How it all works:
+1. The main executable
+- read the name of the programs file from config file
+- read the apps data and separate them into sections for easier searching from the programs file
+- if the user provided a argument (name or alias) find in the programs list it exists, and run the path containing the executable
 
-* map is faster by 23.8%
-  * NVIM: 1,097 ms or 4.13% slower
-  * SHELL.go: 2,741 ms or 7.7% slower
-  * SHELL.exe: 0,126 ms or 0.373% slower
+# Building from source:
+### 1. Building with the command (RECOMMENDED) (put the following commands):
+- go build main.go
 
+### 2. Running without building with the command (NOT RECOMMENDED - slower) (put the following commands):
+- go run main.go
 
-[^1]: Means i tested while in neovim with the following command: !go run main.go ap21 ap79 app100
-[^2]: Means i tested while in powershell with the following command: go run main.go ap21 ap79 app100
-[^3]: Means i tested while in powershell (after building the package, with go build main.go) with the following command: .\main.exe ap21 ap79 app100
+### 3. The build batch file (NOT RECOMMENDED):
+- that script will create a folder called export which will contain a build folder for each platform
 
-# Size of data: [^4]
-Test 1 - small data : 3 tries
-Test 2 - big data : 12 tries
-[^4]: Link to screenshot of spreadsheet: https://imgur.com/a/fQc9YV4
-[^5]: Link to pastebin of raw speed results: https://pastebin.com/gqT3j7GJ
----
-# Slice for loop code:
-```
-appsNotFound := []string{}
-t := time.Now()
-for _, argValue := range os.Args[1:] {
-    found := false
-    for lineIndex := range field {
-        if argValue == field[lineIndex][aliasField] || argValue == field[lineIndex][nameField] {
-            fmt.Printf("Index: %v got Value: %v\n", lineIndex, argValue)
-            cmd := exec.Command(field[lineIndex][pathField])
-            err := cmd.Start()
-            if err != nil {
-                log.Printf("err")
-            }
-            found = true
-            break
-        }
-    }
-    if !found {
-        appsNotFound = append(appsNotFound, argValue)
-    }
-}
-
-if len(appsNotFound) > 0 {
-    fmt.Println("Apps not found:", appsNotFound)
-}
-
-fmt.Printf("For loop took: %v", time.Since(t).Nanoseconds())
-```
----
-# Map for loop code:
-```
-t2 := time.Now()
-// Create a map for fast lookups
-appMap := make(map[string][]string)
-
-for _, app := range field {
-	appMap[app[nameField]] = app
-	appMap[app[aliasField]] = app
-}
-
-apps2NotFound := []string{}
-
-for _, argValue := range os.Args[1:] {
-    app, found := appMap[argValue]
-    if found {
-		fmt.Printf("Got Value: %v\n", argValue)
-		cmd := exec.Command(app[pathField])
-		err := cmd.Start()
-		if err != nil {
-			log.Printf("err")
-			}
-		} else {
-			apps2NotFound = append(apps2NotFound, argValue)
-		}
-}
-
-if len(apps2NotFound) > 0 {
-	fmt.Println("Apps not found:", apps2NotFound)
-}
-fmt.Printf("For loop took: %v", time.Since(t2).Nanoseconds())
-```
----
+### 4. The compress batch file (NOT RECOMMENDED):
+- that script will compress each folder inside the export folder into a folder called archive containing the archived build folders for each platform 
