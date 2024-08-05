@@ -1,2 +1,1 @@
-- made crossplatform distributions
-- cleaned a bit main.go
+- added support for argument passing (multiple, prefixes, connecting strings)

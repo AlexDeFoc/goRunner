@@ -58,7 +58,7 @@ func cmdApp() {
 		line := scanner.Text()
 		parts := strings.SplitN(line, ", ", 3)
 		if len(parts) != 3 {
-			fmt.Println("Invalid line format:", line)
+			//fmt.Println("Invalid line format:", line) Annoying bug warning that always runs and IDK how to fix it to run when actually needed
 			continue
 		}
 
