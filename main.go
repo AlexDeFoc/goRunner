@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 	"os/exec"
+	"path/filepath"
 	"strings"
 )
 
@@ -33,17 +34,37 @@ func SplitAt(delim string) bufio.SplitFunc {
 }
 
 func cmdApp() {
-	// Get the name of the program file from the config
-	configFile, err := os.ReadFile("config")
+	// Get the path of the executing script
+	exePath, err := os.Executable()
 	if err != nil {
-		fmt.Println("Error reading config file:", err)
+		fmt.Println("Error:", err)
 		return
 	}
 
+	// Get the absolute path of the executing script
+	absPath, err := filepath.Abs(exePath)
+	if err != nil {
+		fmt.Println("Error:", err)
+		return
+	}
+
+	// Get the directory of the executing script
+	scriptDir := filepath.Dir(absPath)
+
+	// Get the location of File A
+	configFilePath := filepath.Join(scriptDir, "config")
+
+    configFile, err := os.ReadFile(configFilePath)
+
+    if err != nil {
+        fmt.Printf("Error finding config file: %v", err)
+    }
+
 	programFile := strings.TrimSpace(strings.ReplaceAll(string(configFile), `"`, ""))
+    programFilePath := filepath.Join(scriptDir, programFile)
 
 	// Get DATA from program file
-	data, err := os.Open(programFile)
+	data, err := os.Open(programFilePath)
 	if err != nil {
 		fmt.Println("Error opening program file:", err)
 		return
@@ -149,17 +170,37 @@ func cmdApp() {
 }
 
 func runApp() {
-	// Get the name of the program file from the config
-	configFile, err := os.ReadFile("config")
+	// Get the path of the executing script
+	exePath, err := os.Executable()
 	if err != nil {
-		fmt.Println("Error reading config file:", err)
+		fmt.Println("Error:", err)
 		return
 	}
 
+	// Get the absolute path of the executing script
+	absPath, err := filepath.Abs(exePath)
+	if err != nil {
+		fmt.Println("Error:", err)
+		return
+	}
+
+	// Get the directory of the executing script
+	scriptDir := filepath.Dir(absPath)
+
+	// Get the location of File A
+	configFilePath := filepath.Join(scriptDir, "config")
+
+    configFile, err := os.ReadFile(configFilePath)
+
+    if err != nil {
+        fmt.Printf("Error finding config file: %v", err)
+    }
+
 	programFile := strings.TrimSpace(strings.ReplaceAll(string(configFile), `"`, ""))
+    programFilePath := filepath.Join(scriptDir, programFile)
 
 	// Get DATA from program file
-	data, err := os.Open(programFile)
+	data, err := os.Open(programFilePath)
 	if err != nil {
 		fmt.Println("Error opening program file:", err)
 		return
@@ -174,7 +215,7 @@ func runApp() {
 		line := scanner.Text()
 		parts := strings.SplitN(line, ", ", 3)
 		if len(parts) != 3 {
-			fmt.Println("Invalid line format:", line)
+			//fmt.Println("Invalid line format:", line)
 			continue
 		}
 
@@ -225,19 +266,19 @@ func runApp() {
 }
 
 func main() {
-	// Check if any flags are present
-	flagFound := false
-	for _, arg := range os.Args[1:] {
-		if strings.HasPrefix(arg, "-") {
-			flagFound = true
-			break
-		}
-	}
+    // Check if any flags are present
+    flagFound := false
+    for _, arg := range os.Args[1:] {
+        if strings.HasPrefix(arg, "-") {
+            flagFound = true
+            break
+        }
+    }
 
-	// Decide which function to run based on the presence of flags
-	if flagFound {
-		cmdApp()
-	} else {
-		runApp()
-	}
+    // Decide which function to run based on the presence of flags
+    if flagFound {
+        cmdApp()
+    } else {
+        runApp()
+    }
 }

@@ -1,1 +1,1 @@
-- added support for argument passing (multiple, prefixes, connecting strings)
+- fixed: can't call program from other locations other than the directory from which the executable was ran (config and programs file couldn't be found - because the program tried to run INSIDE the calling directory)
