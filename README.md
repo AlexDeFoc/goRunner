@@ -22,11 +22,40 @@
 
 # How to use the app:
 The program is separated in three parts:
-1. Main executable:
-* Run it with arguments (name OR alias of any app set in your programs list)
-2. Config file:
-* Here you write the name of the programs file list (i set it to bank)
-3. Programs file:
+### 1. Main executable:
+## Starting multiple apps at once
+   - this is the default behaviour if for example you have two apps inside the programs file and they are called ch and dis (first one being an alias for chrome and seconds one for discord)
+   - how you would run it is simply type in your console/shell: main.exe ch dis
+   - TIP: I recommend you do the same as me and set a alias for the app like so: (Powershell script in my case but i recommend you do it in your case too for easier call of apps) - don't forget to make your alias setting so it accepts/parses/passes multiple arguments
+  
+     ![image](https://github.com/user-attachments/assets/a85a16df-ecc9-4a63-bc86-b2fb8c9e8178)
+
+## Starting a SINGLE APP but with multiple arguments passed to it - this is the juicy part
+- **MY EXAMPLE**: So i want to run chrome and go to a certain website like youtube and on youtube search smth that i type in console
+1. To obtain the information I need, I manually visit a YouTube URL. I found that the URL has this prefix: youtube.com/results?search_query=, and I observed that each search term is joined by a plus sign.
+2. Setting the alias: I will go to my powershell script and only slightly modifying the above script (which is loaded into my Windows Terminal config when i load it up), and adding a similar function that runs the following complete command :
+3. & '.\main.exe' "ch" -p "youtube.com/results?search_query=" -c "+" -a $query
+4. And setting the name of the alias to be "yt"
+
+![image](https://github.com/user-attachments/assets/891a95e4-b56e-4505-a3d4-bda0bc845370)
+
+6. Let's decompose the above command:
+ - Contains the main.exe file
+ - the "ch" part is our app alias for chrome, cuz i will be running chrome
+ - the "-p" flag means we are parsing a prefix to the app and putting the prefix in double quotes
+ - the "-c" flag means what we are going to connect with toghether, the multiple arguments we will pass
+ - the "-a" flag means we are going to put now our arguments
+ - the $query part is just from the powershell script giving the arguments we will pass to the command
+ - also don't forget the space after the "-a" flag cuz we want to have the flag and argument separated
+ - NOTE: the flags dont have a certain order so put them in any way you want!
+7. Let's search for example on youtube Michael Jackson, we will type simply in our terminal "yt Michael Jackson" and TaDaa! We got what we intended from our terminal!
+
+![image](https://github.com/user-attachments/assets/97931f6f-70d8-4f0f-a13b-775b293e8d88) - URL
+![image](https://github.com/user-attachments/assets/9acd6d2b-b59f-43b9-a2c5-20bda18705f5) - Search bar
+
+### 2. Config file:
+* Here you write the name of the programs file list (personally i like to name the programs file to "bank" like a bank of apps)
+### 3. Programs file:
 * Here you can add as many apps you want. An app is composed of :
   * Name
   * Path
@@ -36,7 +65,6 @@ The program is separated in three parts:
 # Structure of programs file list:
 ![image](https://github.com/user-attachments/assets/39954499-db1f-4be7-8ce5-5679660aef34)
 
- 
 # Customisation:
 - This app allows you to set any name and alias for your app in the programs file so you can run apps easier & faster
 
