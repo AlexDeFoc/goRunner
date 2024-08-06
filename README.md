@@ -106,6 +106,7 @@ Instead of the dots above put arguments or flags, so follow the structures from 
 3. Open WhatsApp on Chrome
 4. Search OR Open Chrome
 5. Search OR Open Youtube
+6. Other examples
 
 ## Open two apps: Discord and Chrome at the same time
 #### The command:
@@ -134,9 +135,9 @@ set-alias -Name r -Value appsGO
 ```
 The param part of the code will appear in each example because it gives me a string array containing all the arguments i would pass in the console/terminal.
 
-The _&_ symbol enforces the function to run the following command.
+The _"&"_ symbol enforces the function to run the following command.
 
-At the end i set an alias for the function and now i can simply, from anywhere on my computer do: _r dis ch_ , to open these apps!
+At the end i set an alias for the function and now i can simply, from anywhere on my computer do: _"r dis ch"_ , to open these apps!
 
 
 ## Go to url on Chrome
@@ -144,7 +145,7 @@ At the end i set an alias for the function and now i can simply, from anywhere o
 ```
 .\main.exe ch -a epicgames.com
 ```
-In this example i open chrome and pass the epicgames.com url link.
+In this example i open chrome and pass the _"epicgames.com"_ url link.
 
 #### The powershell script:
 ```
@@ -167,9 +168,9 @@ Why does it look complicated? Because i wanted to be able to open chrome without
 
 The if statement checks if the url array is empty and if it's not then we pass the url as an argument.
 
-Notice that i use the @ symbol instead of the $ symbol because it allows us use this command for other functions later like [Open WhatsApp on Chrome](##Open-WhatsApp-on-Chrome).
+Notice that i use the _"@"_ symbol instead of the _"$"_ symbol because it allows us use this command for other functions later like [Open WhatsApp on Chrome](##Open-WhatsApp-on-Chrome).
 
-At the end i set an alias for the function and now i can simply, from anywhere on my computer do: _chu_ , to open chrome! or do: _chu epicgames.com_ , to go there!
+At the end i set an alias for the function and now i can simply, from anywhere on my computer do: _"chu"_ , to open chrome! or do: _"chu epicgames.com"_ , to go there!
 
 ## Open WhatsApp on Chrome
 #### The command:
@@ -185,11 +186,11 @@ function whatsAppRun {
 
 set-alias -Name wh -Value whatsAppGO
 ```
-Notice that we used the urlGo function from the previous example and parsing the "-url" flag that we had in the urlGO function put in it's command as "@url".
+Notice that we used the urlGo function from the previous example and parsing the _"-url"_ flag that we had in the urlGO function put in it's command as _"@url"_.
 
-This way now we can finally use the urlGO for making aliases to open sites from inside our console instantly!
+This way now we can finally use the _"urlGO"_ for making aliases to open sites from inside our console instantly!
 
-At the end i set an alias for the function and now i can simply, from anywhere on my computer do: _wh_ , to open WhatsAppWeb! Because my laptop is a potato and the desktop app is a memory hog.
+At the end i set an alias for the function and now i can simply, from anywhere on my computer do: _"wh"_ , to open WhatsAppWeb! Because my laptop is a potato and the desktop app is a memory hog.
 
 ## Search OR open Chrome
 #### The command:
@@ -197,9 +198,9 @@ At the end i set an alias for the function and now i can simply, from anywhere o
 .\main.exe ch -p "google.com/search?q=" -c "+" -a socks for programmers that go crazy cuz of open source
 ```
 In this example i doing some things:
-1. Using the app aliased ch which is Chrome.
+1. Using the app aliased _"ch"_ which is Chrome.
 2. Provided a prefix for my command that I got from trying to search on google something and found a repeating pattern which is my prefix now. Notice i put it in quotes, it's needed i belive.
-3. Provided a "argument combination symbol", which just means i saw again in the url of google when searching that each term that you search for is _connected_ by plus symbols.
+3. Provided a "argument combination symbol", which just means i saw again in the url of google when searching that each term that you search for is _"connected"_ by plus symbols.
 4. Provided a search query which is just: socks for programmers that go crazy cuz of open source. :))
 5. Notice that the more complex commands we want to achieve the more we would write, that's why we NEED scripts like the one below, or your own for your own shell
 
@@ -220,7 +221,7 @@ function googleGO {
 
 set-alias -Name ch -Value googleGO
 ```
-Can you belive it? Now notice the alias. Now i can simply go into my terminal and do this: _ch socks for programmers that go crazy cuz of open source_ .
+Can you belive it? Now notice the alias. Now i can simply go into my terminal and do this: _"ch socks for programmers that go crazy cuz of open source"_.
 
 Such simplicity!!!
 
@@ -256,13 +257,31 @@ function ytGO {
 
 set-alias -Name yt -Value ytGO
 ```
-Notice now that we can surf youtube from the terminal with a simple alias: _yt_ !
+Notice now that we can surf youtube from the terminal with a simple alias: _"yt"_ !
 
-Now i can simply open my computer, my terminal and check the latest ThePrimagen Video by typing quickly: yt primagen new javascript framework meme .
+Now i can simply open my computer, my terminal and check the latest ThePrimagen Video by typing quickly: _"yt primagen new javascript framework meme"_ .
 
 Just joking ;), don't forget i got a life too, just tuning in sometimes.
 
 Now some technical stuff - Notice that we have another if statement to know if we provide any terms to search for or just open youtube.
+
+## Other examples
+
+1. Open explorer in the current directory
+#### The command:
+```
+.\main.exe explorer -a .
+```
+
+#### The powershell script:
+```
+function explorerGO {
+    & 'C:/Users/Alefan/Documents/Powershell/go/main.exe' 'explorer' -a '.'
+}
+
+set-alias -Name xp -Value explorerGO
+```
+Now i can simply type _"xp"_ in the console and open the explorer inside the current directory that i am in.
 
 # Contribution - Open source:
 Did you just notice we are on GitHub? An open source ussualy, source sharing site for devs like me and you, or users alike? That's crazy that this exists.

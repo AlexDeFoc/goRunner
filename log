@@ -1,1 +1,2 @@
-- fixed niche problem where the executable was called from a different directory making the app isolated from it's dlls, like a steam game. Now it runs the exe inside it's directory! :)
+- added explorer for windows example in README.md
+- formatted italic words by surrounding them with quotes in the README.md
