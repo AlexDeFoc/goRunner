@@ -1,1 +1,39 @@
-- fixed: can't call program from other locations other than the directory from which the executable was ran (config and programs file couldn't be found - because the program tried to run INSIDE the calling directory)
+Complete rework of Documentation:
+✅1. About the app 
+✅2. Support 
+✅3. How to instal
+✅4. How to setup: 
+    Config file 
+    Programs file 
+✅5. How to use
+    Start multiple apps
+    Start an app with argument
+    Notes
+✅6. How to build/run from source
+    Notes
+    Building from source
+    Running from source
+7. Examples
+    ✅Dictionary:
+    - Open two apps
+    - Go to url on Chrome
+    - Open WhatsApp on Chrome
+    - Search OR Open Chrome
+    - Search OR Open Youtube
+
+    ✅Open Chrome and Discord
+    ✅Powershell script and alias
+
+    ✅Enter url to open in Chrome
+    ✅Powershell script and alias
+
+    ✅Enter command to open whatsapp
+    ✅Powershell script and alias - linked to urlGO
+
+    ✅Enter keywords to search on google and if none are found then just open chrome
+    ✅Powershell script and alias - same as youtubeGO
+
+    ✅Enter keywords to search on youtube and if none are found then just open youtube
+    ✅Powershell script and alias - same as googleGO
+
+Tested every example/command to ensure that the documentation is factual. Giga chad move.
