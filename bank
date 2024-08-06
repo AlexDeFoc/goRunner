@@ -7,5 +7,5 @@ name:"7-Zip", path:"C:\App\7-Zip\7zFM.exe", alias:"7z"
 name:"KingdomTwoCrowns", path:"C:\Game\Internet\Kingdom Two Crowns\KingdomTwoCrowns.exe", alias:"ktc"
 name:"Prism", path:"C:\Game\Prism\prismlauncher.exe", alias:"minecraft"
 name:"KeePassXC", path:"C:\App\KeepassXC\KeePassXC.exe", alias:"keepass"
+name:"HollowKnight", path:"C:\Game\Internet\Hollow Knight\hollow_knight.exe", alias:"hk"
 name:"App0", path:"path\to\app0", alias:"none"
-

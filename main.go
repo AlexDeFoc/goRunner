@@ -161,8 +161,9 @@ func cmdApp() {
 	}
 
 	// Run the command with the path and the combined argument
-	cmd := exec.Command(app.Path, combinedArgument)
-	cmd.Stdout = os.Stdout
+    cmd := exec.Command(app.Path, combinedArgument)
+    cmd.Dir = filepath.Dir(app.Path)
+    cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 	if err := cmd.Start(); err != nil {
 		log.Printf("Error starting command: %v", err)
@@ -249,8 +250,9 @@ func runApp() {
 	for _, argValue := range os.Args[1:] {
 		app, found := appsMap[argValue]
 		if found {
-			cmd := exec.Command(app.Path)
-			cmd.Stdout = os.Stdout
+            cmd := exec.Command(app.Path)
+            cmd.Dir = filepath.Dir(app.Path)
+            cmd.Stdout = os.Stdout
 			cmd.Stderr = os.Stderr
 			if err := cmd.Start(); err != nil {
 				log.Printf("Error starting command: %v", err)
