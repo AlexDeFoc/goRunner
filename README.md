@@ -98,6 +98,7 @@ Instead of the dots above put arguments or flags, so follow the structures from 
 4. The following examples contain the actual code you would be running AND a powershell script i use for automating and shortening the time i spend running commands.
 5. I use Chrome as my default browser and the commands containing it are not limited to it only
 6. I DO NOT USE RIPCORD as my discord client, which is against their Terms of Service. This is not a joke. And i do not endorse the use of any 3rd party clients.
+7. Any powershell script i meantion below is added in my Windows Terminal profile ps1 file. Search it up in the internet and find that it loads anything when you open the console, so i can use my own aliases.
 
 ## Dictionary: 
 1. Open two apps
