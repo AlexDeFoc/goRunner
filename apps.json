@@ -1,0 +1,14 @@
+{
+    "appName1": {
+        "path": "path1/to/app/executable",
+        "desc": "description or full name of the app or anything here"
+    },
+    "appName2": {
+        "path": "example/path2/app2.exe",
+        "desc": "description or full name of the app or anything here"
+    },
+    "appName3": {
+        "path": "replace/this/path3/to/app.exe",
+        "desc": "description or full name of the app or anything here"
+    }
+}

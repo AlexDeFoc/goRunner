@@ -18,11 +18,9 @@ for %%t in (%targets%) do (
     :: Create platform directories inside export if they don't exist
     if not exist "export/%%a-%%b" mkdir "export/%%a-%%b"
 
-    :: Copy the config file
-    copy "config" "export/%%a-%%b\config"
+    :: Copy the apps.json file
+    copy "apps.json" "export/%%a-%%b\apps.json"
 
-    :: Copy the bank file
-    copy "bank-demo" "export/%%a-%%b\bank-demo"
 
     :: Set output extension for Windows
     set output_ext=
