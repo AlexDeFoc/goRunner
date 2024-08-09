@@ -77,6 +77,11 @@ Passing a single argument : very useful for passing a single argument for posibl
 ```
 Passing a single argument : very useful for opening URLS and searching through SITES.
 
+3. Get a list of your app names:
+```
+.\main.exe list
+```
+
 ### NOTES: 
 1. The values for the flags : _"-p"_ and _"-c"_ need always to be put in between double quotes. (almost)
 2. Flags don't have any order that they need to by typed in.
@@ -315,8 +320,7 @@ Did you just notice we are on GitHub? An open source ussualy, source sharing sit
 So now i will list what you can support/contribute to this reposity with:
 1. Examples in general
 2. Scripts for the examples in other scripting languages, other then powershell. Especially for the Linux community, and Mac too but they are a fork of Linux. haha lol, burning take.
-3. Any optimisation for the main code or how we handle the programs file, maybe we can switch to something like hashtables/maps? I don't even know what are they. Still learning Golang.
-4. Any optimisation for the scripts/examples.
+3. Any optimisation for the scripts/examples.
 
 ## Notes from me:
 What i wish for this project is to hold it's simplicity, blazing fast speed and ease of use, and also modularity and flexibility. But any suggestions are warmed welcomed. Thank you, have a nice day and thanks for reading!

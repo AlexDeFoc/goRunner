@@ -1,15 +1,16 @@
 package main
 
 import (
-    "encoding/json"
-    "flag"
-    "log"
-    "os"
-    "os/exec"
-    "path/filepath"
-    "runtime"
-    "strings"
-    "sync"
+	"encoding/json"
+	"flag"
+	"fmt"
+	"log"
+	"os"
+	"os/exec"
+	"path/filepath"
+	"runtime"
+	"strings"
+	"sync"
 )
 
 //log.Printf("Checkpoint met")
@@ -43,6 +44,15 @@ func main() {
         return
     }
 
+    // Print apps
+    if len(multiArg) > 0 && multiArg[0] == "list"{
+        fmt.Printf("Apps available: \n")
+        for app, _ := range aliasMap {
+            fmt.Printf("%v\n", app)
+        }
+        return
+    }
+
 
     //set var command to commandComposer (prefix, connector, singleArgument)
     command := commandComposer(*prefix, *connector, *singleArg, multiArg)
@@ -53,7 +63,7 @@ func main() {
         if app, found := aliasMap[*name]; found {
             appLauncher(app.Path, command)
         } else {
-            log.Printf("%v not found\n", *name)
+            fmt.Printf("%v not found\n", *name)
         }
     } else {
         // Set go routines to use nr of cores
@@ -70,7 +80,7 @@ func main() {
                     appLauncher(appPath, command)
                 }(appEntry.Path)
             } else {
-                log.Printf("%v not found\n", app)
+                fmt.Printf("%v not found\n", app)
             }
         }
 
@@ -107,7 +117,7 @@ func jsonExtractor() map[string]App{
         fileT, err2 := os.Open("apps.json")
         file = fileT
         if err2 != nil {
-            log.Panicf("Couldn't find file apps.json")
+            log.Fatalf("Couldn't find file apps.json")
         }
     }
 
