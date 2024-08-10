@@ -114,7 +114,7 @@ Instead of the dots above put arguments or flags, so follow the structures from 
 # Examples
 ### Notes: 
 1. The following examples are very modular.
-2. The lower you go the more difficult they become.
+2. For the scripts, i set a global variable that will be equal to the goRunner executable path
 3. The script part is made of powershell code. Later for bash/other shells.
 4. The script part exists for ease of running apps quicker with less typing and without needing to go the the goRunner app's directory.
 5. I do not use Ripcord.
@@ -156,7 +156,7 @@ function appGO {
         [string[]]$app
     )
 
-    & 'C:/Users/Alefan/Documents/Powershell/go/main.exe' @app
+    & $global:goRunner @app
 }
 
 set-alias r appGO
@@ -183,7 +183,7 @@ function urlGO {
         [string[]]$url
     )
 
-    & 'C:/Users/Alefan/Documents/Powershell/go/main.exe' -n ch -a @url
+    & $global:goRunner -n ch -a @url
 }
 
 set-alias chu urlGO
@@ -229,10 +229,10 @@ function googleGO{
     )
 
     if ($searchQuery) {
-        & 'C:/Users/Alefan/Documents/Powershell/go/main.exe' -n ch -p "google.com/search?q=" -c "+" @searchQuery
+        & $global:goRunner -n ch -p "google.com/search?q=" -c "+" @searchQuery
     }
     else {
-        & 'C:/Users/Alefan/Documents/Powershell/go/main.exe' ch
+        & $global:goRunner ch
     }
 }
 
@@ -262,10 +262,10 @@ function ytGO{
     )
 
     if ($searchQuery) {
-        & 'C:/Users/Alefan/Documents/Powershell/go/main.exe' -n ch -p "youtube.com/results?search_query=" -c "+" @searchQuery
+        & $global:goRunner -n ch -p "youtube.com/results?search_query=" -c "+" @searchQuery
     }
     else {
-        & 'C:/Users/Alefan/Documents/Powershell/go/main.exe' -n ch -a "youtube.com"
+        & $global:goRunner -n ch -a "youtube.com"
     }
 }
 
@@ -287,7 +287,7 @@ Note: xp is refering to the name i gave explorer in my apps.json file.
 #### The powershell script:
 ```
 function explorerGO {
-    & 'C:/Users/Alefan/Documents/Powershell/go/main.exe' -n xp -a .
+    & $global:goRunner -n xp -a .
 }
 
 set-alias xp explorerGO
@@ -305,7 +305,7 @@ Note: xp is refering to the name i gave explorer in my apps.json file.
 #### The powershell script:
 ```
 function hollowKnightGO {
-    & 'C:/Users/Alefan/Documents/Powershell/go/main.exe' -n hk -a '-screen-width 912 -screen-height 570'
+    & $global:goRunner -n hk -a '-screen-width 912 -screen-height 570'
 }
 
 set-alias hk hollowKnightGO
@@ -313,6 +313,24 @@ set-alias hk hollowKnightGO
 Now i can type: _"hk"_ and start hollow knight with those arguments so i can play at good fps on bad PC.
 
 Note: This is the way to pass any argument to an app.
+
+3. Start discord app
+2. Start Hollow Knight with the following arguments "-screen-width 912 -screen-height 570"
+#### The command:
+```
+.\main.exe -n hk -a "-screen-width 912 -screen-height 570"
+```
+Note: xp is refering to the name i gave explorer in my apps.json file.
+
+#### The powershell script:
+```
+function disGO {
+    & $global:goRunner -n dis -a '--processStart Discord.exe'
+}
+
+set-alias dis discordGO
+```
+Note: we need the argument because that's how the discord shortcut does it, this is because the shortcut opens a app called Update.exe.
 
 # Contribution - Open source:
 Did you just notice we are on GitHub? An open source ussualy, source sharing site for devs like me and you, or users alike? That's crazy that this exists.
