@@ -1,0 +1,48 @@
+{
+    "ch": {
+        "app": "ch",
+        "status": "search",
+        "prefix": "google.com/search?q=",
+        "connect": "+",
+        "fallback": "gogle.com"
+    },
+    "chu": {
+        "app": "ch",
+        "status": "call",
+        "prefix": "",
+        "connect": "",
+        "fallback": ""
+    },
+    "epic": {
+        "app": "chu",
+        "status": "call",
+        "fallback": "epicgames.com"
+    },
+    "yt": {
+        "app": "ch",
+        "status": "search",
+        "prefix": "youtube.com/results?search_query=",
+        "connect": "+",
+        "fallback": "youtube.com"
+    },
+    "hk": {
+        "app": "hk",
+        "status": "pass",
+        "command": "-screen-width 912 -screen-height 570"
+    },
+    "coc": {
+        "app": "coc",
+        "status": "command",
+        "command": "start googleplaygames://launch/?id=com.supercell.clashofclans&lid=1&pid=1"
+    },
+    "cr": {
+        "app": "cr",
+        "status": "command",
+        "command": "start googleplaygames://launch/?id=com.supercell.clashroyale&lid=1&pid=1"
+    },
+    "xp": {
+        "app": "xp",
+        "status": "command",
+        "command": "start explorer.exe ."
+    }
+}

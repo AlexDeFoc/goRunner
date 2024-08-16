@@ -1,0 +1,38 @@
+{
+    "app1": {
+        "app": "app1",
+        "status": "command",
+        "command": "start explorer.exe ."
+    },
+    "app2": {
+        "app": "ch",
+        "status": "search",
+        "prefix": "google.com/search?q=",
+        "connect": "+",
+        "fallback": "gogle.com"
+    },
+    "app3": {
+        "app": "ch",
+        "status": "search",
+        "prefix": "youtube.com/results?search_query=",
+        "connect": "+",
+        "fallback": "youtube.com"
+    },
+    "app4": {
+        "app": "hk",
+        "status": "pass",
+        "prefix": "-screen-width 912 -screen-height 570"
+    },
+    "app5": {
+        "app": "app2",
+        "status": "call",
+        "prefix": "",
+        "connect": "",
+        "fallback": ""
+    },
+    "app6": {
+        "app": "app5",
+        "status": "call",
+        "fallback": "epicgames.com"
+    }
+}

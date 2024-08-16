@@ -19,7 +19,9 @@ for %%t in (%targets%) do (
     if not exist "export/%%a-%%b" mkdir "export/%%a-%%b"
 
     :: Copy the apps.json file
-    copy "apps.json" "export/%%a-%%b\apps.json"
+    copy "app.json" "export/%%a-%%b\app.json"
+    copy "alias.json" "export/%%a-%%b\alias.json"
+    copy "config.json" "export/%%a-%%b\config.json"
 
 
     :: Set output extension for Windows
