@@ -1,38 +1,56 @@
 {
-    "app1": {
-        "app": "app1",
-        "status": "command",
-        "command": "start explorer.exe ."
-    },
-    "app2": {
+    "ch": {
         "app": "ch",
         "status": "search",
         "prefix": "google.com/search?q=",
         "connect": "+",
-        "fallback": "gogle.com"
+        "fallback": "google.com"
     },
-    "app3": {
+    "chu": {
+        "app": "ch",
+        "status": "call",
+        "prefix": "",
+        "connect": "",
+        "fallback": "",
+        "desc": "Search web for a link"
+    },
+    "epic": {
+        "app": "chu",
+        "status": "call",
+        "fallback": "epicgames.com"
+    },
+    "wh": {
+        "app": "chu",
+        "status": "call",
+        "fallback": "web.whatsapp.com"
+    },
+    "yt": {
         "app": "ch",
         "status": "search",
         "prefix": "youtube.com/results?search_query=",
         "connect": "+",
         "fallback": "youtube.com"
     },
-    "app4": {
+    "hk": {
         "app": "hk",
         "status": "pass",
-        "prefix": "-screen-width 912 -screen-height 570"
+        "command": "-screen-width 912 -screen-height 570"
     },
-    "app5": {
-        "app": "app2",
-        "status": "call",
-        "prefix": "",
-        "connect": "",
-        "fallback": ""
+    "coc": {
+        "app": "coc",
+        "status": "command",
+        "command": "start googleplaygames://launch/?id=com.supercell.clashofclans&lid=1&pid=1",
+        "desc": "Start clash of clans"
     },
-    "app6": {
-        "app": "app5",
-        "status": "call",
-        "fallback": "epicgames.com"
+    "cr": {
+        "app": "cr",
+        "status": "command",
+        "command": "start googleplaygames://launch/?id=com.supercell.clashroyale&lid=1&pid=1",
+        "desc": "Start clash royale"
+    },
+    "xp": {
+        "app": "xp",
+        "status": "command",
+        "command": "start explorer.exe ."
     }
 }

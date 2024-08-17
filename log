@@ -1,2 +1,3 @@
-- wanted to add ability to list available apps names
-- replaces log with fmt for printing text & panic with fatalf
+- reworked whole app
+- better aliases (complete power)
+- Tip : you can make aliases to aliases and overide fields!

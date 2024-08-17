@@ -52,7 +52,7 @@ func main () {
     Load_List_From_File("app.json", &App_List)
 
     if (os.Args[1]) == "list" {
-        List_Available_Aliases(&Alias_List)
+        List_Available_Aliases(&App_List, &Alias_List)
         os.Exit(0)
     }
 
@@ -63,13 +63,14 @@ func main () {
 
     termName := Get_Terminal_Name()
 
-    //Print(*termName)
-
     // Check if termName exists in list
-    if !Check_Name_Exists(termName, &Alias_List) {
+    if !Check_Name_Exists(termName, &Alias_List) && !Check_Name_Exists(termName, &App_List) {
         fmt.Printf("Please provide valid name\nTry 'list' to list the names\n\n")
         Print(*termName)
         os.Exit(1)
+    } else if !Check_Name_Exists(termName, &Alias_List) {
+        Run_Multi(&App_List)
+        os.Exit(0)
     }
 
     // Get status from aliase
@@ -340,8 +341,8 @@ func Get_Status_From_Alias (aliasName *string, list *map[string]Alias) string {
     return (*list)[*aliasName].Status
 }
 
-func Check_Name_Exists (aliasName *string, list *map[string]Alias) bool {
-    if _, found := (*list)[*aliasName]; found {
+func Check_Name_Exists [T any] (name *string, list *map[string]T) bool {
+    if _, found := (*list)[*name]; found {
         return true
     }
 
@@ -359,10 +360,32 @@ func Load_List_From_File [T any] (fileName string, list *map[string]T) {
     BlowUp(err)
 }
 
-func List_Available_Aliases (list *map[string]Alias) {
-    for name := range *list {
-        fmt.Println(name)
+func List_Available_Aliases (App_List  *map[string]App, Alias_List *map[string]Alias) {
+    var Alias_Names []string
+    var App_Names []string
+
+    for name := range *Alias_List {
+        Alias_Names = append(Alias_Names, name)
     }
+    for name := range *App_List {
+        App_Names = append(App_Names, name)
+    }
+
+    Print("-------- App & Alias Names --------\n")
+
+    Print("--- App Names ---\n")
+    for _, name := range App_Names {
+        fmt.Printf("    -> %v", name)
+        fmt.Printf(":  %v\n", (*App_List)[name].Desc)
+    }
+
+    Print("\n\n--- Alias Names ---\n")
+    for _, name := range Alias_Names {
+        fmt.Printf("    -> %v", name)
+        fmt.Printf(":  %v\n", (*Alias_List)[name].Desc)
+    }
+
+    Print("\n")
 }
 
 func Find_File_Path (fileName string) string{
@@ -383,8 +406,6 @@ func BlowUp (err error) {
 func Print (stuff any) {
     fmt.Println(stuff)
 }
-
-
 
 
 
