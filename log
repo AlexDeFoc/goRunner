@@ -1,3 +1,8 @@
 - reworked whole app
 - better aliases (complete power)
 - Tip : you can make aliases to aliases and overide fields!
+- rework readme
+- now use 3 json files
+- got installers! - auto adds app folder to path
+- reworked build script
+- made win installer builder scripts
