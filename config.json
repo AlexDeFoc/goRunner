@@ -1,4 +1,4 @@
 {
-    "Advanced mode": true,
-    "Shell": "cmd"
+    "Advanced mode": false,
+    "Shell": ""
 }

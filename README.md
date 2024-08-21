@@ -13,21 +13,22 @@
 2. Download the executable for your cpu architecture. Most probably it's 64 or 32 bit. It will look like this: _win_cpu_architecture.exe_. If you don't understand the names of the architectures provided check this footnote.[^1]  
 [^1]: amd64 = 64 bit cpu, i386 = 32 bit cpu
 3. Double-Click it and follow the steps of the installer.  
-4. Done! Now you can enter your terminal and start by typing firstly the app name which is _"r"_, and then the app or alias name.  
+4. Done! Now you can enter your terminal and start by typing firstly the app name which is _"ru"_, and then the app or alias name.  
 #### Guide for Linux/MacOS:  
 1. Go to the [Releases](https://github.com/AlexDeFoc/goRunner/releases/latest) page.  
 2. Download the bash script with the _".sh"_ extension for your architecture.  
 3. Run the script with sudo/administrator privileges to be sure it installs correctlly.  
-4. Done! Now you can enter your terminal and start by typing firstly the app name which is _"r"_, and then the app or alias name.  
+4. Done! Now you can enter your terminal and start by typing firstly the app name which is _"ru"_, and then the app or alias name.  
 ### Portable installation  
 - This doesn't allow you to use the app for anywhere on your computer, because it is not added in your enviromental variables / %PATH%. So you will have to do it manually or run the app while the folder containing the app.  
 1. Go to the [Releases](https://github.com/AlexDeFoc/goRunner/releases/latest) page.  
 2. Download the archive file with the _".tar.xz"_ extension for your operating system and architecture.  
 3. Extract using the command _"tar -xvJf"_ or other ways you extract the files from a compressed tarball.  
-4. Done! Now you can use it by entering your terminal and changing the directory to the app's one and then starting by typing the app name which is _"r"_, and then the app or alias name.  
+4. Done! Now you can use it by entering your terminal and changing the directory to the app's one and then starting by typing the app name which is _"ru"_, and then the app or alias name.  
 <br><br>
 
 ## Configuration  
+###### Note: To see my app & alias configs check in the repository the folder called "My setup".
 ### Configuration fields structure:  
 - Advanced mode  
 - Shell  

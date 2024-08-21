@@ -26,11 +26,11 @@ WizardStyle=modern
 ChangesEnvironment=yes
 
 [Files]
-Source: "C:/Users/Alefan/Documents/work/goRunner/r.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:/Users/Alefan/Documents/work/goRunner/ru.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:/Users/Alefan/Documents/work/goRunner/config.json"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:/Users/Alefan/Documents/work/goRunner/app.json"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:/Users/Alefan/Documents/work/goRunner/alias.json"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
-Name: "{group}\goRunner"; Filename: "{app}\r.exe"; WorkingDir: "{app}"; IconFilename: "{app}\r.exe"; IconIndex: 0
-Name: "{commonstartup}\goRunner"; Filename: "{app}\r.exe"; WorkingDir: "{app}"; IconFilename: "{app}\r.exe"; IconIndex: 0
+Name: "{group}\goRunner"; Filename: "{app}\ru.exe"; WorkingDir: "{app}"; IconFilename: "{app}\ru.exe"; IconIndex: 0
+Name: "{commonstartup}\goRunner"; Filename: "{app}\ru.exe"; WorkingDir: "{app}"; IconFilename: "{app}\ru.exe"; IconIndex: 0

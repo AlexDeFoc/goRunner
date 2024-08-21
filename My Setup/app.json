@@ -1,0 +1,37 @@
+{
+    "dis": {
+        "path": "C:/App/Ripcord/Ripcord.exe"
+    },
+    "ch": {
+        "path": "C:/Program Files/Google/Chrome/Application/chrome.exe"
+    },
+    "hk": {
+        "path": "C:/Game/Internet/Hollow Knight/hollow_knight.exe",
+        "desc": "Hollow Knight"
+    },
+    "xp": {
+        "path": "explorer.exe"
+    },
+    "sp": {
+        "path": "C:/Users/Alefan/AppData/Roaming/Spotify/Spotify.exe"
+    },
+    "keepass": {
+        "path": "C:/App/KeepassXC/KeePassXC.exe"
+    },
+    "ktw": {
+        "path": "C:/Game/Internet/Kingdom Two Crowns/KingdomTwoCrowns.exe",
+        "desc": "Kingdom Two Crowns"
+    },
+    "bcu": {
+        "path": "C:/App/BCUninstaller/BCUninstaller.exe",
+        "desc": "BCUninstaller"
+    },
+    "mine": {
+        "path": "C:/Game/MultiMC/MultiMC.exe",
+        "desc": "Minecraft Launcher"
+    },
+    "ds4": {
+        "path": "C:/App/DS4Windows/DS4Windows.exe",
+        "desc": "Ds4 for using controller"
+    }
+}

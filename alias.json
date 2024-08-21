@@ -1,56 +1,10 @@
 {
-    "ch": {
-        "app": "ch",
-        "status": "search",
-        "prefix": "google.com/search?q=",
-        "connect": "+",
-        "fallback": "google.com"
+    "alias1": {
+        "appname1": "",
+        "status": ""
     },
-    "chu": {
-        "app": "ch",
-        "status": "call",
-        "prefix": "",
-        "connect": "",
-        "fallback": "",
-        "desc": "Search web for a link"
-    },
-    "epic": {
-        "app": "chu",
-        "status": "call",
-        "fallback": "epicgames.com"
-    },
-    "wh": {
-        "app": "chu",
-        "status": "call",
-        "fallback": "web.whatsapp.com"
-    },
-    "yt": {
-        "app": "ch",
-        "status": "search",
-        "prefix": "youtube.com/results?search_query=",
-        "connect": "+",
-        "fallback": "youtube.com"
-    },
-    "hk": {
-        "app": "hk",
-        "status": "pass",
-        "command": "-screen-width 912 -screen-height 570"
-    },
-    "coc": {
-        "app": "coc",
-        "status": "command",
-        "command": "start googleplaygames://launch/?id=com.supercell.clashofclans&lid=1&pid=1",
-        "desc": "Start clash of clans"
-    },
-    "cr": {
-        "app": "cr",
-        "status": "command",
-        "command": "start googleplaygames://launch/?id=com.supercell.clashroyale&lid=1&pid=1",
-        "desc": "Start clash royale"
-    },
-    "xp": {
-        "app": "xp",
-        "status": "command",
-        "command": "start explorer.exe ."
+    "alias2": {
+        "appname2": "",
+        "status": ""
     }
 }
